@@ -15,9 +15,9 @@ import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
 import Gblogo from '../assets/gblogo.png'
 // sidebar nav config
-import navigation from '../_navItems'
+import navigation from '../_nav'
 
-const AppSidebar = () => {
+const OldSidebar = () => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
@@ -83,4 +83,4 @@ const AppSidebar = () => {
   )
 }
 
-export default React.memo(AppSidebar)
+export default React.memo(OldSidebar)
