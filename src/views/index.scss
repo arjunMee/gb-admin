@@ -1,0 +1,15 @@
+.tableDiv {
+  max-height: 260px;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+.table {
+  position: relative;
+}
+
+.table-length {
+  background-color: rgb(231, 231, 231);
+  position: sticky;
+  top: 0;
+}

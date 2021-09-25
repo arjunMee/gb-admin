@@ -1,5 +1,7 @@
 import React from 'react'
 import { CCard, CCardBody, CRow, CCol, CCardHeader } from '@coreui/react'
+import { useFetch } from 'src/hooks/useFetch'
+import { AppUrl } from 'src/config/ApiName'
 import ReactApexChart from 'react-apexcharts'
 const colorsData = ['#6186E8', '#F97029', '#52EBD0', '#FB4E4F']
 const colorsData1 = ['#6185E867', '#F96E2957', '#52EBCF59', '#FB4E4E57']
@@ -78,15 +80,8 @@ const getBarChartOptions = () => {
       },
     },
     xaxis: {
-      type: 'datetime',
-      categories: [
-        '01/01/2011 GMT',
-        '01/02/2011 GMT',
-        '01/03/2011 GMT',
-        '01/04/2011 GMT',
-        '01/05/2011 GMT',
-        '01/06/2011 GMT',
-      ],
+      type: 'days',
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     },
     legend: {
       position: 'bottom',
@@ -99,27 +94,33 @@ const getBarChartOptions = () => {
 }
 
 const UserEngagementWidget = () => {
+  const [state, setState] = React.useState([])
+  const [data, isDataLoading] = useFetch(
+    `http://${AppUrl}/api/gb-admin/total-engagement/`,
+    setState,
+  )
+  const LikeData = state.map((data) => data.likes)
+  const CommentData = state.map((data) => data.comments)
+  const PostData = state.map((data) => data.posts)
+
   const series = [
     {
-      name: 'PRODUCT A',
-      data: [44, 55, 41, 67, 22, 43],
+      name: 'Like',
+      data: LikeData,
     },
     {
-      name: 'PRODUCT B',
-      data: [13, 23, 20, 8, 13, 27],
+      name: 'Comment',
+      data: CommentData,
     },
     {
-      name: 'PRODUCT C',
-      data: [11, 17, 15, 15, 21, 14],
-    },
-    {
-      name: 'PRODUCT D',
-      data: [21, 7, 25, 13, 22, 8],
+      name: 'Post',
+      data: PostData,
     },
   ]
   return (
     <>
       <CRow className="pt-2 pb-2">
+        {console.log(LikeData, CommentData, PostData)}
         <CCol sm="12" lg="12">
           <h6>User Engagement</h6>
         </CCol>
@@ -211,13 +212,15 @@ const UserEngagementWidget = () => {
                   <h6>Monthly</h6>
                 </CCol>
               </CRow>
-              <ReactApexChart
-                options={getBarChartOptions()}
-                series={series}
-                type="bar"
-                height={425}
-                width="100%"
-              />
+              {state.length !== 0 && (
+                <ReactApexChart
+                  options={getBarChartOptions()}
+                  series={series}
+                  type="bar"
+                  height={425}
+                  width="100%"
+                />
+              )}
             </CCardBody>
           </CCard>
         </CCol>
