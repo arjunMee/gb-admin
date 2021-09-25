@@ -1,6 +1,6 @@
 import { CButton } from '@coreui/react'
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import {
   CTable,
@@ -16,8 +16,7 @@ import { NavLink } from 'react-router-dom'
 
 function Index() {
   const [data, isDataLoading] = useFetch(`http://${AppUrl}/api/gb-admin/admin-user/?q=all`)
-  const dispatch = useDispatch()
-  const profile = useSelector((state) => state.profile.profileObject)
+  const profile = useSelector((state) => state.profile)
   return (
     <div className="bg-white px-3 py-3 my-2">
       <div className="d-flex justify-content-between">
@@ -47,7 +46,6 @@ function Index() {
             {data &&
               !isDataLoading &&
               data.map((dataItem, index) => {
-                console.log(dataItem)
                 return (
                   <CTableRow key={dataItem.id}>
                     <CTableDataCell scope="row">{index + 1}</CTableDataCell>

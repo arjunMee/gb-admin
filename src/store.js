@@ -24,9 +24,10 @@ const dashboardReducer = (state = dashboardSetting, { type, ...rest }) => {
 }
 
 const profileReducer = (state = profileObject, { type, ...rest }) => {
+  const { profileObject } = rest
   switch (type) {
     case 'profile':
-      return { ...state, ...rest }
+      return { ...state, ...profileObject }
     default:
       return state
   }
@@ -35,7 +36,6 @@ const profileReducer = (state = profileObject, { type, ...rest }) => {
 const rootReducer = combineReducers({
   dashboardState: dashboardReducer,
   profile: profileReducer,
-
   form: formReducer,
 })
 

@@ -39,7 +39,7 @@ const Login = () => {
       .then((res) => {
         dispatch({
           type: 'profile',
-          profileObject: { ...res.data },
+          profileObject: res.data,
         })
         dispatch({
           type: 'login',

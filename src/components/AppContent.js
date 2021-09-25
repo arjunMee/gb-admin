@@ -1,9 +1,7 @@
 import React, { Suspense } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { CContainer, CSpinner } from '@coreui/react'
-import { useSelector, useDispatch } from 'react-redux'
-// import { ProtectedRoute } from './protected.route'
-import auth from 'src/auth'
+import { useSelector } from 'react-redux'
 
 // routes config
 import routes from '../routes'
@@ -15,8 +13,6 @@ const AppContent = () => {
     <CContainer lg>
       <Suspense fallback={<CSpinner color="primary" />}>
         <Switch>
-          {/* <ProtectedRoute exact path="/app" component={AppLayout} /> */}
-
           {routes.map((route, idx) => {
             return (
               route.component && (

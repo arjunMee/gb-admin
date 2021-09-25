@@ -21,7 +21,7 @@ let admin_id
 
 function EmployeeChanges(props) {
   const { employeeId } = useParams()
-  const profile = useSelector((state) => state.profile.profileObject)
+  const profile = useSelector((state) => state.profile)
   const [data, setData] = React.useState(null)
   const [edit, setEdit] = React.useState(false)
 
