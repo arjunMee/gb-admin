@@ -1,17 +1,9 @@
 import React from 'react'
-import { CButton, CCol, CRow, CContainer, CAvatar } from '@coreui/react'
-import { NavLink } from 'react-router-dom'
-import ReportUserModal from './ReportUserModal'
-import { useFetch } from 'src/hooks/useFetch'
+import { CButton } from '@coreui/react'
 import { AppUrl, config } from 'src/config/ApiName'
 import axios from 'axios'
 import ChooseReportList from './ChooseReportList'
 
-const image = [
-  'https://coreui.io/react/docs/4.0/static/3-07e357f51e1b86d9e741409ac9e2eba5.jpg',
-  'https://coreui.io/react/docs/4.0/static/1-34eedf58c0876517e8587997f9625944.jpg',
-]
-//
 function AllReport() {
   const [chooseReportType, setChooseReportType] = React.useState('pending')
   const [statisticData, statisticLoadingData] = React.useState([])

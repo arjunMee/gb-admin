@@ -8,7 +8,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Dashboard',
     to: '/tournament/home',
-    icon: <CIcon name="cil-speedometer" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-speedometer" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',
@@ -19,7 +19,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Events',
     to: '/to',
-    icon: <CIcon name="cil-puzzle" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-puzzle" customClassName="nav-icon" />,
     show: true,
     items: [
       {
@@ -53,7 +53,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Tickets',
     to: '/to',
-    icon: <CIcon name="cil-tags" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-tags" customClassName="nav-icon" />,
     items: [
       {
         _component: 'CNavItem',
@@ -74,7 +74,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Revenue',
     to: '/tournament/revenue',
-    icon: <CIcon name="cil-speedometer" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-speedometer" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',
@@ -85,7 +85,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Ads',
     to: '/tournament/ads',
-    icon: <CIcon name="cil-speedometer" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-speedometer" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',
@@ -96,7 +96,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Payments',
     to: '/tournament/payments',
-    icon: <CIcon name="cil-speedometer" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-speedometer" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',
@@ -107,7 +107,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Analytics',
     to: '/tournament/analytics',
-    icon: <CIcon name="cil-speedometer" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-speedometer" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',
@@ -118,7 +118,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Support',
     to: '/tournament/support',
-    icon: <CIcon name="cil-speedometer" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-speedometer" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',

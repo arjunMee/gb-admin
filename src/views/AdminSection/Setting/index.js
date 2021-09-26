@@ -1,22 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { CTable, CTableBody, CTableDataCell, CTableRow } from '@coreui/react'
-import { useFetch } from 'src/hooks/useFetch'
 import PropTypes from 'prop-types'
 import { AppUrl, config } from 'src/config/ApiName'
 import { Field, reduxForm } from 'redux-form'
 import { renderField, required, email, aol } from 'src/appRedux/reduxFormValidation'
 import axios from 'axios'
 import ChangeUserPassword from './ChangeUserPassword'
-import { useHistory } from 'react-router-dom'
 
 let admin_id
 
 function Setting(props) {
-  const userProfile = useSelector((state) => state.profile.profileObject)
-  const history = useHistory()
-  !userProfile && history.push('/login')
-  // return
+  const userProfile = useSelector((state) => state.profile)
 
   const [edit, setEdit] = React.useState(false)
   const [data, setData] = React.useState(null)
@@ -95,34 +90,24 @@ function Setting(props) {
                 <CTableBody>
                   <CTableRow>
                     <CTableDataCell>
-                      <p>
-                        <strong>Full Name :</strong> {data?.user.first_name || ''}{' '}
-                        {data?.user.last_name || ''}
-                      </p>
+                      <strong>Full Name :</strong> {data?.user.first_name || ''}
+                      {data?.user.last_name || ''}
                     </CTableDataCell>
                     <CTableDataCell>
-                      <p>
-                        <strong>Account :</strong> {data?.user.email || ''}
-                      </p>
+                      <strong>Account :</strong> {data?.user.email || ''}
                     </CTableDataCell>
                   </CTableRow>
                   <CTableRow>
                     <CTableDataCell>
-                      <p>
-                        <strong>City :</strong> {data?.city || 'demo city'}
-                      </p>
+                      <strong>City :</strong> {data?.city || 'demo city'}
                     </CTableDataCell>
                     <CTableDataCell>
-                      <p>
-                        <strong>Country :</strong> {data?.country || 'demo country'}
-                      </p>
+                      <strong>Country :</strong> {data?.country || 'demo country'}
                     </CTableDataCell>
                   </CTableRow>
                   <CTableRow>
                     <CTableDataCell>
-                      <p>
-                        <strong> Birthdate :</strong> {data?.birthday || 'demo birthdate'}
-                      </p>
+                      <strong> Birthdate :</strong> {data?.birthday || 'demo birthdate'}
                     </CTableDataCell>
                   </CTableRow>
                 </CTableBody>
@@ -190,34 +175,24 @@ function Setting(props) {
                 <CTableBody>
                   <CTableRow>
                     <CTableDataCell>
-                      <p>
-                        <strong>Position :</strong> {data?.position || 'demo position'}
-                      </p>
+                      <strong>Position :</strong> {data?.position || 'demo position'}
                     </CTableDataCell>
                     <CTableDataCell>
-                      <p>
-                        <strong>Responsibilities :</strong>{' '}
-                        {data?.reponsibilities || 'demo reponsibilities'}
-                      </p>
+                      <strong>Responsibilities :</strong>
+                      {data?.reponsibilities || 'demo reponsibilities'}
                     </CTableDataCell>
                   </CTableRow>
                   <CTableRow>
                     <CTableDataCell>
-                      <p>
-                        <strong>Department :</strong> {data?.department || 'demo department'}
-                      </p>
+                      <strong>Department :</strong> {data?.department || 'demo department'}
                     </CTableDataCell>
                     <CTableDataCell>
-                      <p>
-                        <strong>Reporting Manager :</strong>{' '}
-                        {data?.reporting_manager || 'demo supervisor'}
-                      </p>
+                      <strong>Reporting Manager :</strong>
+                      {data?.reporting_manager || 'demo supervisor'}
                     </CTableDataCell>
                   </CTableRow>
                   <CTableRow>
-                    <p style={{ maxWidth: 350, wordWrap: 'break-word' }}>
-                      <strong>Skils :</strong> {data?.skills || 'demo skills'}
-                    </p>
+                    <strong>Skils :</strong> {data?.skills || 'demo skills'}
                   </CTableRow>
                 </CTableBody>
               </CTable>
@@ -288,22 +263,16 @@ function Setting(props) {
                 <CTableBody>
                   <CTableRow>
                     <CTableDataCell>
-                      <p>
-                        <strong>Email :</strong> {data?.city || 'demo city'}
-                      </p>
+                      <strong>Email :</strong> {data?.city || 'demo city'}
                     </CTableDataCell>
                     <CTableDataCell>
-                      <p>
-                        <strong>Phone Number :</strong>
-                        {data?.contact_number || 'demo contact_number'}
-                      </p>
+                      <strong>Phone Number :</strong>
+                      {data?.contact_number || 'demo contact_number'}
                     </CTableDataCell>
                   </CTableRow>
                   <CTableRow>
                     <CTableDataCell>
-                      <p>
-                        <strong>Github :</strong> {data?.github || 'demo github'}
-                      </p>
+                      <strong>Github :</strong> {data?.github || 'demo github'}
                     </CTableDataCell>
                   </CTableRow>
                 </CTableBody>
@@ -381,11 +350,11 @@ const onSubmit = (values, dispatch) => {
 }
 
 Setting.propTypes = {
-  props: PropTypes.object,
-  handleSubmit: PropTypes.object,
-  pristine: PropTypes.object,
-  reset: PropTypes.object,
-  submitting: PropTypes.object,
+  props: PropTypes.any,
+  handleSubmit: PropTypes.any,
+  pristine: PropTypes.any,
+  reset: PropTypes.any,
+  submitting: PropTypes.any,
 }
 
 export default reduxForm({

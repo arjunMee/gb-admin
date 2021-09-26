@@ -27,7 +27,7 @@ const image = [
 ]
 
 function UserProfile() {
-  const { userId } = useParams()
+  // const { userId } = useParams()
   const [state, setState] = React.useState({
     user: { id: '', username: '', first_name: '', last_name: '', email: '' },
     status: 0,
@@ -35,11 +35,6 @@ function UserProfile() {
     gender: '',
     birthday: '',
   })
-
-  const [data, isDataLoading] = useFetch(
-    `http://${AppUrl}/api/users/profile/?profile_name=${userId}`,
-    setState,
-  )
 
   const changeHandler = (id, e, title) => {
     if (title === 'verify') {

@@ -75,7 +75,6 @@ function AllUser() {
 
   return (
     <div className="bg-white px-3 py-3 my-2">
-      {console.log(state)}
       <div className="d-flex justify-content-between">
         <h4>All Users</h4>
         <CButton color="secondary" className="mx-2">

@@ -51,7 +51,6 @@ function ChooseReportList({ chooseReportType, fetchDataParent }) {
 
   return (
     <div className="my-4" style={{ border: '1px solid gray', borderRadius: 10 }}>
-      {console.log(ReportUserData)}
       <CContainer>
         <div
           className="p-3"

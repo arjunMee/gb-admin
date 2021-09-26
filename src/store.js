@@ -7,10 +7,22 @@ import { reducer as formReducer } from 'redux-form'
 
 const dashboardSetting = {
   sidebarShow: false,
-  authenticated: false,
+  authenticated: true,
 }
 
-const profileObject = {}
+const inital = {
+  access: 'admin',
+  admin_user_id: 2,
+  contact_number: '8876543210',
+  token: '0f059b9c3f7a5ff46f06702e1c385139ed5a13f8',
+  user: {
+    email: 'email2@email.com',
+    first_name: 'firstname2',
+    id: 6,
+    last_name: 'lastname2',
+    username: 'adminuser2',
+  },
+}
 
 const dashboardReducer = (state = dashboardSetting, { type, ...rest }) => {
   switch (type) {
@@ -23,11 +35,11 @@ const dashboardReducer = (state = dashboardSetting, { type, ...rest }) => {
   }
 }
 
-const profileReducer = (state = profileObject, { type, ...rest }) => {
+const profileReducer = (state = inital, { type, ...rest }) => {
   const { profileObject } = rest
   switch (type) {
     case 'profile':
-      return { ...state, ...profileObject }
+      return { ...inital, ...profileObject }
     default:
       return state
   }
@@ -46,7 +58,12 @@ const persistConfig = {
 }
 
 const pReducer = persistReducer(persistConfig, rootReducer)
-const store = createStore(pReducer, composeWithDevTools(applyMiddleware(logger)))
+const store = createStore(
+  pReducer,
+  // composeWithDevTools(),
+  // applyMiddleware(),
+  // logger
+)
 export const persistor = persistStore(store)
 
 export default store

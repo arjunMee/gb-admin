@@ -5,15 +5,12 @@ import {
   CContainer,
   CHeader,
   CHeaderBrand,
-  CHeaderDivider,
   CHeaderNav,
   CHeaderToggler,
   CNavLink,
   CNavItem,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-
-import { AppBreadcrumb } from './index'
 
 import { AppHeaderDropdown } from './header/index'
 
@@ -31,7 +28,7 @@ const AppHeader = () => {
           <CIcon name="cil-menu" size="lg" />
         </CHeaderToggler>
         <CHeaderBrand className="mx-auto d-md-none" to="/">
-          <CIcon name="logo" height="48" alt="Logo" />
+          <CIcon name="logo" height={48} alt="Logo" />
         </CHeaderBrand>
         <CHeaderNav className="d-none d-md-flex me-auto">
           <CNavItem>

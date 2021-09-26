@@ -17,10 +17,10 @@ const image = [
 function BannedUser() {
   const [state, setState] = React.useState([])
 
-  const [data, isDataLoading] = useFetch(
-    `http://${AppUrl}/api/gb-admin/users/?q=banned_users`,
-    setState,
-  )
+  const [
+    // data,
+    isDataLoading,
+  ] = useFetch(`http://${AppUrl}/api/gb-admin/users/?q=banned_users`, setState)
 
   const changeHandler = (id, e, title) => {
     const elementsIndex = state.findIndex((element) => element.user.id === id)

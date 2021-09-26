@@ -9,7 +9,7 @@ import {
   CCreateNavItem,
 } from '@coreui/react'
 
-import CIcon from '@coreui/icons-react'
+// import CIcon from '@coreui/icons-react'
 
 import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
@@ -42,6 +42,7 @@ const OldSidebar = () => {
             height: 50,
             objectFit: 'contain',
           }}
+          alt="icon"
         />
         <img
           className="sidebar-brand-narrow"
@@ -51,6 +52,7 @@ const OldSidebar = () => {
             height: 50,
             objectFit: 'contain',
           }}
+          alt="icon"
         />
         <h6
           className="sidebar-brand-full"

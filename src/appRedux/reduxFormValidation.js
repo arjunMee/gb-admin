@@ -1,6 +1,4 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-
 export const required = (value) => (value || typeof value === 'number' ? undefined : 'Required')
 export const maxLength = (max) => (value) =>
   value && value.length > max ? `Must be ${max} characters or less` : undefined
@@ -28,10 +26,6 @@ export const phoneNumber = (value) =>
     ? 'Invalid phone number, must be 10 digits'
     : undefined
 
-// { label, input, meta: { touched, invalid, error }, ...custom }
-//  {
-//    console.log(input.value)
-//  }
 export const renderField = ({
   placeholders,
   fullWdith = false,

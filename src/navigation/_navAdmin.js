@@ -14,13 +14,7 @@ const _nav = [
       text: 'NEW',
     },
   },
-  {
-    _component: 'CNavItem',
-    as: NavLink,
-    anchor: 'Taskboard',
-    to: '/generalAdmin/taskboard',
-    icon: <CIcon name="cil-graph" customClassName="nav-icon" />,
-  },
+
   {
     _component: 'CNavItem',
     as: NavLink,

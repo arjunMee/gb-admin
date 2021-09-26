@@ -52,9 +52,9 @@ const Login = React.lazy(() => import('./views/pages/login/Login'))
 
 const Widgets = React.lazy(() => import('./views/components/widgets/Widgets'))
 
-const Charts = React.lazy(() => import('./views/components/charts/Charts'))
-const OldDashboard = React.lazy(() => import('./views/Dashboard/OldDashboard'))
-const Social = React.lazy(() => import('./views/Dashboard/Dashboard'))
+// const Charts = React.lazy(() => import('./views/components/charts/Charts'))
+// const OldDashboard = React.lazy(() => import('./views/Dashboard/OldDashboard'))
+// const Social = React.lazy(() => import('./views/Dashboard/Dashboard'))
 // Home
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'))
 const Statistics = React.lazy(() => import('./views/Dashboard/Statistics'))
@@ -81,7 +81,7 @@ const TournamentAnalytics = React.lazy(() => import('./views/Tournament/Analytic
 const TournamentSupport = React.lazy(() => import('./views/Tournament/Support'))
 // admin
 const GeneralAdminHome = React.lazy(() => import('./views/AdminSection/home'))
-const GeneralAdminTaskboard = React.lazy(() => import('./views/AdminSection/Taskboard'))
+// const GeneralAdminTaskboard = React.lazy(() => import('./views/AdminSection/Taskboards'))
 const GeneralAdminSetting = React.lazy(() => import('./views/AdminSection/Setting/'))
 const GeneralAdminSettingAddUser = React.lazy(() =>
   import('./views/AdminSection/Setting/AddUserSetting'),
@@ -180,12 +180,7 @@ const routes = [
     exact: true,
     component: GeneralAdminHome,
   },
-  {
-    path: '/generalAdmin/taskboard',
-    name: 'ManageReport',
-    exact: true,
-    component: GeneralAdminTaskboard,
-  },
+
   {
     path: '/generalAdmin/Setting',
     name: 'ManageReport',

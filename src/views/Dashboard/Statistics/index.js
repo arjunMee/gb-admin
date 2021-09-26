@@ -38,76 +38,44 @@ function Statistics() {
       <hr />
       <CNav variant="tabs" role="tablist">
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 1}
-            onClick={() => setActiveKey(1)}
-          >
+          <button active={activeKey === 1} onClick={() => setActiveKey(1)}>
             User
-          </CNavLink>
+          </button>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 2}
-            onClick={() => setActiveKey(2)}
-          >
+          <button active={activeKey === 2} onClick={() => setActiveKey(2)}>
             Message
-          </CNavLink>
+          </button>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 3}
-            onClick={() => setActiveKey(3)}
-          >
+          <button active={activeKey === 3} onClick={() => setActiveKey(3)}>
             Comments
-          </CNavLink>
+          </button>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 4}
-            onClick={() => setActiveKey(4)}
-          >
+          <button active={activeKey === 4} onClick={() => setActiveKey(4)}>
             Likes
-          </CNavLink>
+          </button>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 5}
-            onClick={() => setActiveKey(5)}
-          >
+          <button active={activeKey === 5} onClick={() => setActiveKey(5)}>
             Shares
-          </CNavLink>
+          </button>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 6}
-            onClick={() => setActiveKey(6)}
-          >
+          <button active={activeKey === 6} onClick={() => setActiveKey(6)}>
             Pages
-          </CNavLink>
+          </button>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 7}
-            onClick={() => setActiveKey(7)}
-          >
+          <button active={activeKey === 7} onClick={() => setActiveKey(7)}>
             Groups
-          </CNavLink>
+          </button>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 8}
-            onClick={() => setActiveKey(8)}
-          >
+          <button active={activeKey === 8} onClick={() => setActiveKey(8)}>
             Reports
-          </CNavLink>
+          </button>
         </CNavItem>
       </CNav>
       <CTabContent>

@@ -1,5 +1,5 @@
 import React from 'react'
-import CIcon from '@coreui/icons-react'
+import { CIcon } from '@coreui/icons-react'
 import { NavLink } from 'react-router-dom'
 
 const _nav = [
@@ -8,7 +8,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Dashboard',
     to: '/dashboard',
-    icon: <CIcon name="cil-speedometer" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-speedometer" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',
@@ -23,14 +23,14 @@ const _nav = [
     as: NavLink,
     anchor: 'Colors',
     to: '/theme/colors',
-    icon: <CIcon name="cil-drop" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-drop" customClassName="nav-icon" />,
   },
   {
     _component: 'CNavItem',
     as: NavLink,
     anchor: 'Typography',
     to: '/theme/typography',
-    icon: <CIcon name="cil-pencil" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-pencil" customClassName="nav-icon" />,
   },
   {
     _component: 'CNavTitle',
@@ -41,7 +41,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Base',
     to: '/to',
-    icon: <CIcon name="cil-puzzle" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-puzzle" customClassName="nav-icon" />,
     items: [
       {
         _component: 'CNavItem',
@@ -126,7 +126,7 @@ const _nav = [
   {
     _component: 'CNavGroup',
     anchor: 'Buttons',
-    icon: <CIcon name="cil-cursor" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-cursor" customClassName="nav-icon" />,
     items: [
       {
         _component: 'CNavItem',
@@ -151,7 +151,7 @@ const _nav = [
   {
     _component: 'CNavGroup',
     anchor: 'Forms',
-    icon: <CIcon name="cil-notes" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-notes" customClassName="nav-icon" />,
     items: [
       {
         _component: 'CNavItem',
@@ -208,12 +208,12 @@ const _nav = [
     as: NavLink,
     anchor: 'Charts',
     to: '/charts',
-    icon: <CIcon name="cil-chart-pie" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-chart-pie" customClassName="nav-icon" />,
   },
   {
     _component: 'CNavGroup',
     anchor: 'Icons',
-    icon: <CIcon name="cil-star" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-star" customClassName="nav-icon" />,
     items: [
       {
         _component: 'CNavItem',
@@ -242,7 +242,7 @@ const _nav = [
   {
     _component: 'CNavGroup',
     anchor: 'Notifications',
-    icon: <CIcon name="cil-bell" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-bell" customClassName="nav-icon" />,
     items: [
       {
         _component: 'CNavItem',
@@ -275,7 +275,7 @@ const _nav = [
     as: NavLink,
     anchor: 'Widgets',
     to: '/widgets',
-    icon: <CIcon name="cil-calculator" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-calculator" customClassName="nav-icon" />,
     badge: {
       color: 'info',
       text: 'NEW',
@@ -288,7 +288,7 @@ const _nav = [
   {
     _component: 'CNavGroup',
     anchor: 'Pages',
-    icon: <CIcon name="cil-star" customClassName="nav-icon" />,
+    icon: <CIcon icon="cil-star" customClassName="nav-icon" />,
     items: [
       {
         _component: 'CNavItem',

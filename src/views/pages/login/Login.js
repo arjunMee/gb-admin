@@ -15,7 +15,6 @@ import {
 import CIcon from '@coreui/icons-react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-import auth from 'src/auth'
 import { useDispatch } from 'react-redux'
 
 const Login = () => {

@@ -1,4 +1,3 @@
-import { CFormLabel, CFormSelect } from '@coreui/react'
 import axios from 'axios'
 import React from 'react'
 import { AppUrl, config } from 'src/config/ApiName'
@@ -7,8 +6,6 @@ import {
   renderField,
   required,
   minLength8,
-  minLength2,
-  alphaNumeric,
   email,
   aol,
   phoneNumber,
@@ -19,8 +16,6 @@ import { Field, reduxForm } from 'redux-form'
 
 const onSubmit = (values, dispatch) => {
   alert(JSON.stringify(values))
-  // dispatch();
-  // const userProfile = useSelector((state) => state.profile.profileObject)
 
   axios
     .post(

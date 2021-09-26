@@ -55,7 +55,6 @@ const PostTableTab = () => {
 
   return (
     <CTable>
-      {console.log('pop', data)}
       <CTableHead>
         <CTableRow>
           <CTableHeaderCell scope="col">No</CTableHeaderCell>
@@ -88,38 +87,22 @@ function AdminHomeTable() {
     <div className="bg-white px-3 py-3 my-3">
       <CNav variant="tabs" role="tablist">
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 1}
-            onClick={() => setActiveKey(1)}
-          >
+          <CNavLink active={activeKey === 1} onClick={() => setActiveKey(1)}>
             User
           </CNavLink>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 2}
-            onClick={() => setActiveKey(2)}
-          >
+          <CNavLink active={activeKey === 2} onClick={() => setActiveKey(2)}>
             Post
           </CNavLink>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 3}
-            onClick={() => setActiveKey(3)}
-          >
+          <CNavLink active={activeKey === 3} onClick={() => setActiveKey(3)}>
             Article
           </CNavLink>
         </CNavItem>
         <CNavItem>
-          <CNavLink
-            href="javascript:void(0);"
-            active={activeKey === 4}
-            onClick={() => setActiveKey(4)}
-          >
+          <CNavLink active={activeKey === 4} onClick={() => setActiveKey(4)}>
             Tournament
           </CNavLink>
         </CNavItem>

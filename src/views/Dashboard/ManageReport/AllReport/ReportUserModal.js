@@ -93,12 +93,6 @@ const ReportUserModal = ({ id, username, first_name, last_name, report_type, tot
                         View
                       </CButton>
                     </NavLink>
-                    {/* <CButton color="secondary" className="mx-2">
-                      Safe
-                    </CButton>
-                    <CButton color="secondary" className="mx-2">
-                      Delete
-                    </CButton> */}
                   </div>
                 </CCol>
               </CRow>

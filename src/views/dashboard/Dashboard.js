@@ -7,7 +7,10 @@ const UserEngagementWidget = lazy(() => import('../components/widgets/UserEngage
 const TradingTable = lazy(() => import('./component/Trading'))
 
 const Dashboard = () => {
-  const [data, isDataLoading] = useFetch(`http://${AppUrl}/api/gb-admin/social-statistics/`)
+  const [
+    data,
+    // isDataLoading
+  ] = useFetch(`http://${AppUrl}/api/gb-admin/social-statistics/`)
 
   return (
     <>

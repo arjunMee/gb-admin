@@ -13,7 +13,7 @@ import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
 import Gblogo from '../assets/gblogo.png'
 
-import navBarHome from '../navigation/_navHome'
+// import navBarHome from '../navigation/_navHome'
 import navBarTournament from '../navigation/_navTournament'
 // sidebar nav config
 
@@ -21,8 +21,8 @@ const AppSidebar = () => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
-  const [navBar, setNavBar] = React.useState('home')
-
+  // const [navBar, setNavBar] = React.useState('home')
+  //
   return (
     <CSidebar
       position="fixed"

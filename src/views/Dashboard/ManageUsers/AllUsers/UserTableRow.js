@@ -1,5 +1,5 @@
 import React from 'react'
-import { CButton, CFormSelect, CCol, CRow, CContainer, CAvatar } from '@coreui/react'
+import { CButton, CFormSelect, CCol, CRow, CAvatar } from '@coreui/react'
 import { PropTypes } from 'prop-types'
 import axios from 'axios'
 import { AppUrl, token } from 'src/config/ApiName'
@@ -30,7 +30,7 @@ function UserTableRow({ data }) {
       .catch((err) => console.log(err))
     // .finally(() => setRender(!render))
   }
-  console.log(data)
+
   return (
     <>
       <CRow className="my-3">

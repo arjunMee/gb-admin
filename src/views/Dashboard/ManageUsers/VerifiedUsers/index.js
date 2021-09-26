@@ -17,10 +17,10 @@ const image = [
 function AllUser() {
   const [state, setState] = React.useState([])
 
-  const [data, isDataLoading] = useFetch(
-    `http://${AppUrl}/api/gb-admin/users/?q=verified_users`,
-    setState,
-  )
+  const [
+    // data,
+    isDataLoading,
+  ] = useFetch(`http://${AppUrl}/api/gb-admin/users/?q=verified_users`, setState)
 
   const changeHandler = (id, e, title) => {
     const elementsIndex = state.findIndex((element) => element.user.id === id)

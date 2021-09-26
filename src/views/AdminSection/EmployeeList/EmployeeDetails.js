@@ -1,16 +1,9 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import {
-  CBreadcrumb,
-  CBreadcrumbItem,
-  CTable,
-  CTableBody,
-  CTableDataCell,
-  CTableRow,
-} from '@coreui/react'
-import { useFetch } from 'src/hooks/useFetch'
+
+import { CTable, CTableBody, CTableDataCell, CTableRow } from '@coreui/react'
+
 import { useParams } from 'react-router'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { AppUrl, config } from 'src/config/ApiName'
 import { Field, reduxForm } from 'redux-form'
 import { renderField, required, email, aol } from 'src/appRedux/reduxFormValidation'

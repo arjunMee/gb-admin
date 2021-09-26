@@ -1,15 +1,7 @@
 import { CButton, CModal, CModalBody, CModalFooter, CModalHeader, CModalTitle } from '@coreui/react'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-// import Button from 'react-bootstrap/Button'
 import './AccessModal.scss'
-
-// const Otpinput = () => {
-
-//   return (
-
-//   )
-// }
 
 const AccessModal = () => {
   const [visible, setVisible] = React.useState(false)
@@ -28,8 +20,8 @@ const AccessModal = () => {
   }
 
   function handleSubmit(event) {
-    const data = new FormData(event.target)
-    console.log(state)
+    // const data = new FormData(event.target)
+    // console.log(state)
     event.preventDefault()
   }
 
@@ -40,7 +32,7 @@ const AccessModal = () => {
         elmnt.target.form.elements[next].focus()
       }
     } else {
-      console.log('next')
+      // console.log('next')
 
       const next = elmnt.target.tabIndex
       if (next < 5) {
