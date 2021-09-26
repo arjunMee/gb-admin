@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [
     data,
     // isDataLoading
-  ] = useFetch(`http://${AppUrl}/api/gb-admin/social-statistics/`)
+  ] = useFetch(`http://${AppUrl}/api/gb-admin/dashboard-statistics/`)
 
   return (
     <>

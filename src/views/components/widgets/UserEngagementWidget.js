@@ -1,8 +1,9 @@
 import React from 'react'
-import { CCard, CCardBody, CRow, CCol, CCardHeader } from '@coreui/react'
+import { CCard, CCardBody, CRow, CCol, CCardHeader, CFormSelect, CNavLink } from '@coreui/react'
 import { useFetch } from 'src/hooks/useFetch'
-import { AppUrl } from 'src/config/ApiName'
+import { AppUrl, config } from 'src/config/ApiName'
 import ReactApexChart from 'react-apexcharts'
+import axios from 'axios'
 const colorsData = ['#6186E8', '#F97029', '#52EBD0', '#FB4E4F']
 const colorsData1 = ['#6185E867', '#F96E2957', '#52EBCF59', '#FB4E4E57']
 
@@ -95,10 +96,26 @@ const getBarChartOptions = () => {
 
 const UserEngagementWidget = () => {
   const [state, setState] = React.useState([])
-  const [data, isDataLoading] = useFetch(
-    `http://${AppUrl}/api/gb-admin/total-engagement/`,
-    setState,
-  )
+  const [viewDay, setViewDay] = React.useState('month')
+  const [startDate, setStartDate] = React.useState('2021-06-13')
+  const [endDate, setEndDate] = React.useState('2021-09-13')
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(
+          `/api/gb-admin/total-engagement/?from_month=6&from_year=2020&to_month=9&to_year=2019`,
+          config,
+        )
+        setState(data)
+      } catch (error) {
+        console.log('error', error)
+      }
+    }
+
+    fetchData()
+  }, [viewDay, startDate, endDate])
+
   const LikeData = state.map((data) => data.likes)
   const CommentData = state.map((data) => data.comments)
   const PostData = state.map((data) => data.posts)
@@ -209,9 +226,58 @@ const UserEngagementWidget = () => {
                     justifyContent: 'flex-end',
                   }}
                 >
-                  <h6>Monthly</h6>
+                  <button
+                    onClick={() => setViewDay('month')}
+                    style={{ backgroundColor: viewDay === 'month' && 'lightgray' }}
+                  >
+                    Month
+                  </button>
+                  <button
+                    style={{ backgroundColor: viewDay === 'year' && 'lightgray' }}
+                    onClick={() => setViewDay('year')}
+                  >
+                    Year
+                  </button>
                 </CCol>
               </CRow>
+              <CRow className="pt-2 pb-2">
+                <CCol></CCol>
+                {console.log(startDate, endDate)}
+                <CCol
+                  sm="6"
+                  lg="6"
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                  }}
+                >
+                  <div className="mx-2">
+                    <label htmlFor="startDate" style={{ display: 'block' }}>
+                      Start Date
+                    </label>
+                    <input
+                      type="date"
+                      name="startDate"
+                      id="startDate"
+                      value={startDate}
+                      onChange={(e) => setStartDate(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="endDate" style={{ display: 'block' }}>
+                      End Date
+                    </label>
+                    <input
+                      type="date"
+                      name="endDate"
+                      id="endDate"
+                      value={endDate}
+                      onChange={(e) => setEndDate(e.target.value)}
+                    />
+                  </div>
+                </CCol>
+              </CRow>
+
               {state.length !== 0 && (
                 <ReactApexChart
                   options={getBarChartOptions()}

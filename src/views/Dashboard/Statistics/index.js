@@ -38,44 +38,44 @@ function Statistics() {
       <hr />
       <CNav variant="tabs" role="tablist">
         <CNavItem>
-          <button active={activeKey === 1} onClick={() => setActiveKey(1)}>
+          <CNavLink active={activeKey === 1} onClick={() => setActiveKey(1)}>
             User
-          </button>
+          </CNavLink>
         </CNavItem>
         <CNavItem>
-          <button active={activeKey === 2} onClick={() => setActiveKey(2)}>
+          <CNavLink active={activeKey === 2} onClick={() => setActiveKey(2)}>
             Message
-          </button>
+          </CNavLink>
         </CNavItem>
         <CNavItem>
-          <button active={activeKey === 3} onClick={() => setActiveKey(3)}>
+          <CNavLink active={activeKey === 3} onClick={() => setActiveKey(3)}>
             Comments
-          </button>
+          </CNavLink>
         </CNavItem>
         <CNavItem>
-          <button active={activeKey === 4} onClick={() => setActiveKey(4)}>
+          <CNavLink active={activeKey === 4} onClick={() => setActiveKey(4)}>
             Likes
-          </button>
+          </CNavLink>
         </CNavItem>
         <CNavItem>
-          <button active={activeKey === 5} onClick={() => setActiveKey(5)}>
+          <CNavLink active={activeKey === 5} onClick={() => setActiveKey(5)}>
             Shares
-          </button>
+          </CNavLink>
         </CNavItem>
         <CNavItem>
-          <button active={activeKey === 6} onClick={() => setActiveKey(6)}>
+          <CNavLink active={activeKey === 6} onClick={() => setActiveKey(6)}>
             Pages
-          </button>
+          </CNavLink>
         </CNavItem>
         <CNavItem>
-          <button active={activeKey === 7} onClick={() => setActiveKey(7)}>
+          <CNavLink active={activeKey === 7} onClick={() => setActiveKey(7)}>
             Groups
-          </button>
+          </CNavLink>
         </CNavItem>
         <CNavItem>
-          <button active={activeKey === 8} onClick={() => setActiveKey(8)}>
+          <CNavLink active={activeKey === 8} onClick={() => setActiveKey(8)}>
             Reports
-          </button>
+          </CNavLink>
         </CNavItem>
       </CNav>
       <CTabContent>

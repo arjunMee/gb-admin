@@ -15,7 +15,7 @@ import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
 import Gblogo from '../assets/gblogo.png'
 // sidebar nav config
-import navigation from '../_nav'
+import navigation from '../navigation/_nav'
 
 const OldSidebar = () => {
   const dispatch = useDispatch()
