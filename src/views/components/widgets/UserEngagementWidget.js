@@ -82,7 +82,20 @@ const getBarChartOptions = () => {
     },
     xaxis: {
       type: 'days',
-      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      categories: [
+        'Jan',
+        'Fab',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sept',
+        'Oct',
+        'Nav',
+        'Dec',
+      ],
     },
     legend: {
       position: 'bottom',
@@ -97,14 +110,16 @@ const getBarChartOptions = () => {
 const UserEngagementWidget = () => {
   const [state, setState] = React.useState([])
   const [viewDay, setViewDay] = React.useState('month')
-  const [startDate, setStartDate] = React.useState('2021-06-13')
+  const [startDate, setStartDate] = React.useState('2021-02-13')
   const [endDate, setEndDate] = React.useState('2021-09-13')
-
+  const [monthData, setMonthData] = React.useState(7)
   React.useEffect(() => {
+    const year = startDate.slice(0, 4)
+    const startMonth = startDate.slice(5, 7)
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `/api/gb-admin/total-engagement/?from_month=6&from_year=2020&to_month=9&to_year=2019`,
+          `http://${AppUrl}/api/gb-admin/total-engagement/?from_month=${startMonth}&from_year=${year}&to_month=${monthData}&to_year=${year}`,
           config,
         )
         setState(data)
@@ -114,7 +129,7 @@ const UserEngagementWidget = () => {
     }
 
     fetchData()
-  }, [viewDay, startDate, endDate])
+  }, [viewDay, startDate, endDate, monthData])
 
   const LikeData = state.map((data) => data.likes)
   const CommentData = state.map((data) => data.comments)
@@ -134,10 +149,76 @@ const UserEngagementWidget = () => {
       data: PostData,
     },
   ]
+
+  //
+  const Month = [
+    'Jan',
+    'Fab',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sept',
+    'Oct',
+    'Nav',
+    'Dec',
+  ]
+
+  const getBarChartOptions = () => {
+    const startMonth = startDate.slice(5, 7)
+    const BelowData = Month.filter((_, index) => index + 1 >= startMonth && index + 1 <= monthData)
+    return {
+      chart: {
+        type: 'bar',
+        height: 350,
+        stacked: true,
+        toolbar: {
+          show: true,
+        },
+        zoom: {
+          enabled: true,
+        },
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            legend: {
+              position: 'bottom',
+              offsetX: -10,
+              offsetY: 0,
+            },
+          },
+        },
+      ],
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          borderRadius: 10,
+        },
+      },
+      xaxis: {
+        type: 'days',
+        categories: BelowData,
+      },
+      legend: {
+        position: 'bottom',
+        offsetY: 7,
+      },
+      fill: {
+        opacity: 1,
+      },
+    }
+  }
+
+  //
+
   return (
     <>
       <CRow className="pt-2 pb-2">
-        {console.log(LikeData, CommentData, PostData)}
+        {console.log(state)}
         <CCol sm="12" lg="12">
           <h6>User Engagement</h6>
         </CCol>
@@ -232,17 +313,17 @@ const UserEngagementWidget = () => {
                   >
                     Month
                   </button>
-                  <button
+                  {/* <button
                     style={{ backgroundColor: viewDay === 'year' && 'lightgray' }}
                     onClick={() => setViewDay('year')}
                   >
                     Year
-                  </button>
+                  </button> */}
                 </CCol>
               </CRow>
+              {console.log(startDate, endDate, monthData)}
               <CRow className="pt-2 pb-2">
                 <CCol></CCol>
-                {console.log(startDate, endDate)}
                 <CCol
                   sm="6"
                   lg="6"
@@ -264,16 +345,45 @@ const UserEngagementWidget = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="endDate" style={{ display: 'block' }}>
-                      End Date
-                    </label>
-                    <input
-                      type="date"
-                      name="endDate"
-                      id="endDate"
-                      value={endDate}
-                      onChange={(e) => setEndDate(e.target.value)}
-                    />
+                    {viewDay === 'month' ? (
+                      <>
+                        <label htmlFor="endDate" style={{ display: 'block' }}>
+                          Select Month Range
+                        </label>
+                        <CFormSelect
+                          onChange={(e) => setMonthData(e.target.value)}
+                          value={monthData}
+                        >
+                          <option value="1">Jan</option>
+                          <option value="2">Fab</option>
+                          <option value="3">Mar</option>
+                          <option value="4">Apr</option>
+                          <option value="5">May</option>
+                          <option value="6">Jun</option>
+                          <option value="7">Jul</option>
+                          <option value="8">Aug</option>
+                          <option value="9">Sept</option>
+                          <option value="10">Oct</option>
+                          <option value="11">Nov</option>
+                          <option value="12">Dec</option>
+                        </CFormSelect>
+                      </>
+                    ) : (
+                      <>
+                        <label htmlFor="endDate" style={{ display: 'block' }}>
+                          Select Year Range
+                        </label>
+                        <CFormSelect
+                          onChange={(e) => setMonthData(e.target.value)}
+                          value={monthData}
+                        >
+                          <option value="1">1 Year</option>
+                          <option value="2">2 Year</option>
+                          <option value="3">3 Year</option>
+                          <option value="4">4 Year</option>
+                        </CFormSelect>
+                      </>
+                    )}
                   </div>
                 </CCol>
               </CRow>
